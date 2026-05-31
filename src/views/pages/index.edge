@@ -1,87 +1,733 @@
 @component('layouts/main')
-  @slot('title')
-    njin
+  @slot('title')Jasa Pembuatan Website Bisnis Indonesia | JadiWeb@end
+
+  @slot('head')
+    {{-- ── Canonical & hreflang ──────────────────────────────────── --}}
+    <link rel="canonical" href="https://jadiweb.id/" />
+    <link rel="alternate" hreflang="id" href="https://jadiweb.id/" />
+    <link rel="alternate" hreflang="x-default" href="https://jadiweb.id/" />
+    <meta name="author" content="JadiWeb" />
+    <meta name="geo.region" content="ID" />
+    <meta name="geo.placename" content="Indonesia" />
+
+    {{-- ── Meta Description ──────────────────────────────────────── --}}
+    <meta name="description" content="JadiWeb buat website bisnis lo dalam 2 hari kerja. Harga flat Rp 2.490.000/tahun. Sudah termasuk domain, hosting, CMS, desain custom, dan SEO. Tanpa biaya tersembunyi, terima beres." />
+
+    {{-- ── Open Graph (Facebook, WhatsApp, LinkedIn) ─────────────── --}}
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="JadiWeb" />
+    <meta property="og:locale" content="id_ID" />
+    <meta property="og:url" content="https://jadiweb.id/" />
+    <meta property="og:title" content="JadiWeb - Website Bisnis Jadi dalam 2 Hari Kerja" />
+    <meta property="og:description" content="Buat website bisnis lo dalam 2 hari kerja. Harga flat Rp 2.490.000/tahun. Domain, hosting, CMS, desain custom, dan SEO sudah included. Terima beres." />
+    <meta property="og:image" content="https://jadiweb.id/og-image.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="JadiWeb - Jasa Pembuatan Website Bisnis Indonesia" />
+
+
+    {{-- ── JSON-LD Structured Data ────────────────────────────────── --}}
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "WebSite",
+          "@id": "https://jadiweb.id/#website",
+          "name": "JadiWeb",
+          "url": "https://jadiweb.id/",
+          "description": "Jasa pembuatan website bisnis Indonesia. Jadi dalam 2 hari kerja, harga flat, terima beres.",
+          "publisher": { "@id": "https://jadiweb.id/#organization" },
+          "inLanguage": "id-ID"
+        },
+        {
+          "@type": "ProfessionalService",
+          "@id": "https://jadiweb.id/#organization",
+          "name": "JadiWeb",
+          "url": "https://jadiweb.id/",
+          "logo": "https://jadiweb.id/logo.png",
+          "description": "Jasa pembuatan website bisnis untuk UMKM dan usaha Indonesia. Company profile, landing page, dan portfolio jadi dalam 2 hari kerja.",
+          "email": "halo@jadiweb.id",
+          "telephone": "+6281271762774",
+          "contactPoint": {
+            "@type": "ContactPoint",
+            "telephone": "+6281271762774",
+            "contactType": "customer service",
+            "availableLanguage": "Indonesian",
+            "contactOption": "TollFree"
+          },
+          "areaServed": {
+            "@type": "Country",
+            "name": "Indonesia"
+          },
+          "hasOfferCatalog": {
+            "@type": "OfferCatalog",
+            "name": "Paket Website JadiWeb",
+            "itemListElement": [
+              {
+                "@type": "Offer",
+                "name": "Website Bisnis - Company Profile, Landing Page, atau Portfolio",
+                "description": "Website custom jadi dalam 2 hari kerja. Sudah termasuk domain, hosting 1 tahun, CMS, full custom design, dan optimasi SEO.",
+                "price": "2490000",
+                "priceCurrency": "IDR",
+                "availability": "https://schema.org/InStock",
+                "priceValidUntil": "2026-12-31",
+                "seller": { "@id": "https://jadiweb.id/#organization" }
+              }
+            ]
+          },
+          "sameAs": [
+            "https://www.instagram.com/jadiwebid/"
+          ]
+        },
+        {
+          "@type": "WebPage",
+          "@id": "https://jadiweb.id/#webpage",
+          "url": "https://jadiweb.id/",
+          "name": "Jasa Buat Website Bisnis Indonesia | JadiWeb",
+          "description": "JadiWeb buat website bisnis lo dalam 2 hari kerja. Harga flat Rp 2.490.000/tahun, sudah termasuk domain, hosting, CMS, desain custom, dan SEO.",
+          "isPartOf": { "@id": "https://jadiweb.id/#website" },
+          "about": { "@id": "https://jadiweb.id/#organization" },
+          "inLanguage": "id-ID"
+        },
+        {
+          "@type": "FAQPage",
+          "mainEntity": [
+            {
+              "@type": "Question",
+              "name": "Bisnis saya masih kecil, apakah sudah butuh website?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Justru sekarang waktu yang tepat. Bangun kredibilitas sebelum bisnis lo besar, biar dari awal sudah kelihatan serius dan profesional di mata calon klien."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Berapa harga jasa pembuatan website di JadiWeb?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Rp 2.490.000 per tahun, sudah termasuk semuanya: domain, hosting, CMS, full custom design, dan optimasi SEO. Kurang dari Rp 210.000 per bulan dan nggak ada biaya tersembunyi."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Berapa lama proses pembuatan website di JadiWeb?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "2 hari kerja. Bukan minggu, bukan bulan. Lo isi brief singkat, kami langsung kerjakan dan website lo sudah online."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Apakah saya perlu paham teknis untuk pesan website di JadiWeb?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Sama sekali tidak perlu. Kami urus semuanya dari awal sampai website lo live. Mulai dari desain, domain, hosting, CMS, hingga SEO. Cukup kasih info bisnis lo, sisanya urusan kami."
+              }
+            }
+          ]
+        }
+      ]
+    }
+    </script>
   @end
 
   @slot('main')
-    <div class="relative min-h-screen flex flex-col bg-slate-950 text-slate-100 overflow-hidden">
+  <div x-data="jadiwebPage()">
 
-      {{-- Background --}}
-      <div class="absolute inset-0 pointer-events-none">
-        <div class="absolute inset-0" style="background:radial-gradient(ellipse 80% 60% at 50% 0%,rgba(139,92,246,0.12) 0%,transparent 70%)"></div>
-        <div class="absolute inset-0" style="background-image:linear-gradient(rgba(255,255,255,0.025) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,0.025) 1px,transparent 1px);background-size:80px 80px"></div>
-        <div class="absolute bottom-0 inset-x-0 h-px bg-gradient-to-r from-transparent via-slate-700/50 to-transparent"></div>
+    {{-- ================================================================
+         HEADER
+         ================================================================ --}}
+    <header class="site-header">
+      <div class="container nav">
+        {{-- Logo --}}
+        <a href="/" style="display:inline-flex;align-items:center;gap:9px;text-decoration:none">
+          <svg width="44" height="32" viewBox="0 0 575 423" fill="none" xmlns="http://www.w3.org/2000/svg" style="flex-shrink:0">
+            <path d="M328.191 207.579L337.016 221.993C339.271 225.676 344.289 226.459 347.559 223.639L405.866 173.363C409.796 169.974 408.803 163.638 404.026 161.614L339.709 134.361C328.604 129.656 328.246 114.049 339.123 108.839L564.876 0.711435C570.691 -2.07373 576.861 3.81625 574.348 9.75416L405.727 408.276C402.316 416.338 391.12 416.934 386.873 409.28L304.561 260.964L328.191 207.579Z" fill="#091413"/>
+            <path d="M99.2188 119.264C95.084 111.395 101.985 102.269 110.683 104.103L277.668 139.319C284.275 140.713 290.015 144.771 293.531 150.536L330.325 210.855C333.834 216.608 333.73 223.864 330.056 229.513L252.969 348.055C243.114 363.211 227.778 373.967 210.172 378.072L18.0294 422.872C18.0294 422.872 74.6795 397.898 110.272 381.301C140.756 367.087 164.533 356.796 178.536 348.044C192.539 339.293 202.603 314.636 170.659 324.415C138.715 334.193 123.509 339.549 98.8949 349.795C59.3092 366.272 0 397.492 0 397.492C0 397.492 31.5063 375.475 93.2062 332.729C129.583 307.527 151.357 287.705 163.103 275.68C170.53 268.076 171.472 256.766 166.527 247.357L99.2188 119.264Z" fill="#1F6F5F"/>
+          </svg>
+          <span style="font-family:var(--font-display);font-weight:800;font-size:19px;letter-spacing:-.02em;color:var(--fg1)">JadiWeb</span>
+        </a>
+
+        {{-- Desktop nav links --}}
+        <nav class="nav-links" aria-label="Navigasi utama">
+          <a href="#layanan">Layanan</a>
+          <a href="#cara">Cara kerja</a>
+          <a href="#harga">Harga</a>
+          <a href="#faq">FAQ</a>
+        </nav>
+
+        {{-- Desktop CTA --}}
+        <a href="https://wa.me/6281271762774?text=Halo+JadiWeb%2C+saya+mau+jadiin+website+bisnis+saya" class="btn btn-primary nav-header-cta" target="_blank" rel="noopener">
+          Oke, Jadiin
+          <i data-lucide="arrow-right"></i>
+        </a>
+
+        {{-- Mobile hamburger --}}
+        <button
+          class="nav-hamburger"
+          @click="menuOpen = !menuOpen"
+          :aria-expanded="menuOpen.toString()"
+          aria-label="Toggle navigasi"
+        >
+          <svg x-show="!menuOpen" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/>
+          </svg>
+          <svg x-show="menuOpen" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M18 6 6 18M6 6l12 12"/>
+          </svg>
+        </button>
       </div>
 
-      {{-- Top nav --}}
-      <nav class="relative z-10 flex items-center justify-end px-8 py-6">
-        <div class="flex items-center gap-1 text-sm">
-          <a href="/api/auth/login"
-             class="px-4 py-2 text-slate-400 hover:text-slate-100 rounded-lg hover:bg-slate-800/60 transition-all duration-200">
-            Log in
-          </a>
-          <a href="#"
-             class="px-4 py-2 text-slate-100 bg-slate-800/80 hover:bg-slate-700/80 border border-slate-700/50 rounded-lg transition-all duration-200">
-            Register
+      {{-- Mobile menu dropdown --}}
+      <div
+        x-show="menuOpen"
+        x-transition:enter="transition ease-out duration-200"
+        x-transition:enter-start="opacity-0 -translate-y-2"
+        x-transition:enter-end="opacity-100 translate-y-0"
+        x-transition:leave="transition ease-in duration-150"
+        x-transition:leave-start="opacity-100 translate-y-0"
+        x-transition:leave-end="opacity-0 -translate-y-2"
+        class="nav-mobile"
+        aria-label="Navigasi mobile"
+      >
+        <a href="#layanan" @click="menuOpen = false">Layanan</a>
+        <a href="#cara" @click="menuOpen = false">Cara kerja</a>
+        <a href="#harga" @click="menuOpen = false">Harga</a>
+        <a href="#faq" @click="menuOpen = false">FAQ</a>
+        <div class="nav-mobile-cta">
+          <a href="https://wa.me/6281271762774?text=Halo+JadiWeb%2C+saya+mau+jadiin+website+bisnis+saya" class="btn btn-primary btn-block" target="_blank" rel="noopener" @click="menuOpen = false">
+            Oke, Jadiin
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M5 12h14M12 5l7 7-7 7"/>
+            </svg>
           </a>
         </div>
-      </nav>
+      </div>
+    </header>
 
-      {{-- Center --}}
-      <main class="relative z-10 flex-1 flex items-center justify-center px-6">
-        <div
-          x-data="{ show: false }"
-          x-init="requestAnimationFrame(() => show = true)"
-          :class="show ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-5'"
-          class="text-center transition-all duration-700 ease-out"
-        >
+    <main>
 
-          {{-- Wordmark --}}
-          <h1 class="text-8xl md:text-9xl font-bold tracking-tighter mb-4 bg-gradient-to-b from-slate-100 to-slate-400 bg-clip-text text-transparent leading-none select-none">
-            njin
-          </h1>
+      {{-- ================================================================
+           HERO
+           ================================================================ --}}
+      <section id="beranda" class="section" aria-label="Hero - Website bisnis jadi dalam 1-2 hari" style="padding-top:92px;padding-bottom:64px;text-align:center;position:relative;overflow:hidden">
+        <div class="container" style="max-width:920px;position:relative">
 
-          {{-- Tagline --}}
-          <p class="text-slate-500 text-lg tracking-wide mb-10">
-            Build beautiful websites.
-          </p>
-
-          {{-- Divider --}}
-          <div class="flex items-center justify-center gap-3 mb-10">
-            <div class="h-px w-16 bg-gradient-to-r from-transparent to-slate-700"></div>
-            <div class="w-1.5 h-1.5 rounded-full bg-violet-500/60"></div>
-            <div class="h-px w-16 bg-gradient-to-l from-transparent to-slate-700"></div>
+          <div class="reveal">
+            <span class="chip chip-soft">
+              <i data-lucide="zap"></i>
+              Website jadi dalam 2 hari kerja
+            </span>
           </div>
 
-          {{-- Links --}}
-          <div class="flex flex-wrap items-center justify-center gap-2">
-            @each(link in [
-              { label: 'Documentation', href: '#' },
-              { label: 'GitHub',        href: '#' },
-              { label: 'Changelog',     href: '#' },
-            ])
-              <a
-                href="{{ link.href }}"
-                class="inline-flex items-center gap-1.5 px-5 py-2.5 text-sm text-slate-400 hover:text-slate-100 bg-slate-900/60 hover:bg-slate-800/80 border border-slate-800/80 hover:border-slate-700/80 rounded-xl transition-all duration-200 backdrop-blur-sm"
-              >
-                {{ link.label }}
-                <svg class="w-3 h-3 opacity-40" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
-                  <path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
-                </svg>
+          <div class="reveal" data-delay="60" style="margin-top:24px">
+            <h1 class="hero-h1">
+              Website itu <span class="hero-strike">nggak penting</span>.<br>
+              Tapi bisnis lo <span class="hero-accent">tetap wajib punya</span>.
+            </h1>
+          </div>
+
+          <div class="reveal" data-delay="130">
+            <p style="font:var(--text-lead);color:var(--fg2);max-width:620px;margin:24px auto 0">
+              Klien kecil mungkin nggak masalah. Tapi klien besar? Mereka nggak akan serius sama bisnis yang nggak punya website.
+            </p>
+          </div>
+
+          <div class="reveal" data-delay="200">
+            <div style="display:flex;gap:14px;justify-content:center;margin-top:36px;flex-wrap:wrap">
+              <a href="https://wa.me/6281271762774?text=Halo+JadiWeb%2C+saya+mau+jadiin+website+bisnis+saya" class="btn btn-primary btn-lg" target="_blank" rel="noopener">
+                Oke, Jadiin
+                <i data-lucide="arrow-right"></i>
               </a>
-            @end
+              <a href="#harga" class="btn btn-secondary btn-lg">
+                <i data-lucide="tag"></i>
+                Harga
+              </a>
+            </div>
+          </div>
+
+          <div class="reveal" data-delay="280">
+            <div style="display:flex;gap:22px;justify-content:center;margin-top:26px;flex-wrap:wrap">
+              @each(t in ['Tanpa biaya tersembunyi', 'Domain & hosting included', 'Terima beres'])
+                <span style="display:inline-flex;align-items:center;gap:7px;font-size:13.5px;font-weight:600;color:var(--fg3)">
+                  <i data-lucide="check-circle-2" style="width:16px;height:16px;color:var(--teal)"></i>
+                  {{ t }}
+                </span>
+              @end
+            </div>
+          </div>
+
+          {{-- Browser Mockup --}}
+          <div class="reveal" data-delay="340">
+            <div class="hero-mockwrap">
+
+              {{-- Float: Google card --}}
+              <div class="float-card float-search">
+                <div style="display:flex;align-items:center;gap:8px;background:var(--mist);border:1px solid var(--line);border-radius:999px;padding:7px 12px">
+                  <i data-lucide="search" style="width:14px;height:14px;color:var(--fg3)"></i>
+                  <span style="font-size:12.5px;color:var(--fg2);font-weight:600">jasa bisnis lo terdekat</span>
+                </div>
+                <div style="margin-top:11px;display:flex;align-items:center;gap:7px">
+                  <span style="width:18px;height:18px;border-radius:5px;background:var(--teal);display:inline-flex;align-items:center;justify-content:center;flex-shrink:0">
+                    <i data-lucide="check" style="width:12px;height:12px;color:#fff;stroke-width:3"></i>
+                  </span>
+                  <span style="font-size:12px;font-family:var(--font-mono);color:var(--teal);font-weight:600">bisnislo.id</span>
+                </div>
+                <div style="font-size:13.5px;font-weight:700;color:var(--fg1);margin-top:4px;line-height:1.35">Bisnis Lo - Layanan Terpercaya</div>
+                <div style="font-size:11.5px;color:var(--fg3);margin-top:3px;line-height:1.4">Website resmi. Liat layanan, portofolio &amp; kontak…</div>
+              </div>
+
+              {{-- Float: Live badge --}}
+              <div class="float-card float-live">
+                <span class="pulse"></span>
+                Live dalam 2 hari
+              </div>
+
+              <div class="hero-mock">
+                {{-- Browser chrome --}}
+                <div style="display:flex;align-items:center;gap:8px;padding:12px 16px;border-bottom:1px solid var(--line);background:var(--mist)">
+                  <span style="width:11px;height:11px;border-radius:50%;background:#E0867F;flex-shrink:0"></span>
+                  <span style="width:11px;height:11px;border-radius:50%;background:#E6C16B;flex-shrink:0"></span>
+                  <span style="width:11px;height:11px;border-radius:50%;background:#8FC8A0;flex-shrink:0"></span>
+                  <span style="margin-left:12px;flex:1;max-width:280px;font-size:12px;font-family:var(--font-mono);color:var(--fg3);background:#fff;border:1px solid var(--line);border-radius:999px;padding:5px 12px;display:inline-flex;align-items:center;gap:6px">
+                    <i data-lucide="lock" style="width:11px;height:11px;color:#1F8A5B"></i>bisnislo.id
+                  </span>
+                </div>
+
+                {{-- Fake site nav --}}
+                <div class="mock-nav">
+                  <span style="display:inline-flex;align-items:center;gap:8px">
+                    <span style="width:24px;height:24px;border-radius:7px;background:var(--teal);display:inline-flex;align-items:center;justify-content:center;flex-shrink:0">
+                      <i data-lucide="aperture" style="width:15px;height:15px;color:#fff"></i>
+                    </span>
+                    <span style="font-weight:800;font-size:15px;letter-spacing:-.02em">Bisnis Lo</span>
+                  </span>
+                  <span class="mock-navlinks"><span>Beranda</span><span>Layanan</span><span>Portofolio</span><span>Kontak</span></span>
+                  <span style="font-size:12px;font-weight:700;color:#fff;background:var(--teal);padding:7px 13px;border-radius:9px">Hubungi</span>
+                </div>
+
+                {{-- Fake hero --}}
+                <div style="display:grid;grid-template-columns:1.1fr 1fr;min-height:286px" class="mock-hero">
+                  <div style="padding:38px 40px;display:flex;flex-direction:column;justify-content:center">
+                    <span style="display:inline-flex;width:fit-content;align-items:center;gap:6px;font-size:11px;font-weight:700;color:var(--teal-800);background:var(--teal-50);padding:5px 11px;border-radius:999px">
+                      <i data-lucide="star" style="width:12px;height:12px;color:var(--teal)"></i>Dipercaya 200+ klien
+                    </span>
+                    <div style="font-family:var(--font-display);font-weight:800;letter-spacing:-.03em;margin-top:14px;font-size:33px;line-height:1.04">Keliatan serius.<br>Closing lebih gampang.</div>
+                    <p style="color:var(--fg2);margin-top:12px;font-size:14px;line-height:1.6;max-width:300px">Website rapi yang langsung bikin calon klien percaya sama bisnis lo.</p>
+                    <div style="display:flex;gap:10px;margin-top:18px">
+                      <span style="font-size:13px;font-weight:700;color:#fff;background:var(--teal);padding:10px 16px;border-radius:10px">Pesan sekarang</span>
+                      <span style="font-size:13px;font-weight:700;color:var(--fg1);background:#fff;border:1.5px solid var(--line-strong);padding:10px 16px;border-radius:10px">Liat portofolio</span>
+                    </div>
+                    <div style="display:flex;gap:30px;margin-top:26px">
+                      <span class="mock-stat"><span class="n">4.9★</span><span class="l">Rating klien</span></span>
+                      <span class="mock-stat"><span class="n">200+</span><span class="l">Proyek selesai</span></span>
+                      <span class="mock-stat"><span class="n">5 thn</span><span class="l">Pengalaman</span></span>
+                    </div>
+                  </div>
+                  <div style="background:linear-gradient(140deg,#134539,#1F6F5F);position:relative;overflow:hidden">
+                    <div style="position:absolute;inset:0;background-image:radial-gradient(circle,rgba(255,255,255,.35) 1px,transparent 1px);background-size:15px 15px;opacity:.18;mix-blend-mode:screen"></div>
+                    <div style="position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:14px">
+                      <i data-lucide="store" style="width:56px;height:56px;color:rgba(255,255,255,.95);stroke-width:1.4"></i>
+                      <span style="font-size:12.5px;font-weight:600;color:rgba(255,255,255,.75)">Foto bisnis lo di sini</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {{-- ================================================================
+           CREDIBILITY BAR
+           ================================================================ --}}
+      <div class="cred-bar">
+        <div class="container cred-inner">
+          <span class="cred-item"><i data-lucide="zap"></i>2 Hari Kerja</span>
+          <span class="cred-item"><i data-lucide="tag"></i>Harga Flat, Titik</span>
+          <span class="cred-item"><i data-lucide="package-check"></i>Terima Beres</span>
+        </div>
+      </div>
+
+      {{-- ================================================================
+           PROBLEM (dark band)
+           ================================================================ --}}
+      <section class="section problem-band" aria-label="Kenyataan pahit kenapa bisnis tanpa website kalah bersaing">
+        <div class="hero-pattern"></div>
+        <div class="container" style="max-width:820px;position:relative">
+          <div class="reveal">
+            <div class="eyebrow" style="color:var(--teal-300)">Kenyataan pahit</div>
+          </div>
+          <div class="reveal" data-delay="60">
+            <h2 class="sec-h2" style="color:#fff;margin-top:16px">
+              Bisnis udah jalan. Tapi di internet,<br>kok nggak ada?
+            </h2>
+          </div>
+          <div class="reveal" data-delay="130">
+            <div style="margin-top:28px;display:flex;flex-direction:column;gap:18px;font-size:18px;line-height:1.65;color:rgba(234,240,238,.82);max-width:680px">
+              <p>Pelanggan setia mungkin udah percaya. Tapi calon klien baru yang baru pertama kali denger? Mereka bakal <strong style="color:#fff">Google dulu</strong> sebelum hubungi lo.</p>
+              <p>Kalau yang muncul cuma akun Instagram atau bahkan nggak ada sama sekali, mereka lanjut ke kompetitor lo yang punya website.</p>
+              <p style="font-weight:700;color:#fff;font-size:20px">Bukan karena bisnis lo kalah bagus. Tapi karena lo belum kelihatan serius.</p>
+            </div>
+          </div>
+          <div class="reveal" data-delay="200" style="margin-top:32px">
+            <a href="https://wa.me/6281271762774?text=Halo+JadiWeb%2C+saya+mau+jadiin+website+bisnis+saya" class="btn btn-primary btn-lg" target="_blank" rel="noopener">
+              Mulai keliatan serius
+              <i data-lucide="arrow-right"></i>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      {{-- ================================================================
+           SERVICES
+           ================================================================ --}}
+      <section id="layanan" class="section" aria-label="Layanan - Company Profile, Landing Page, Portfolio" style="background:var(--mist)">
+        <div class="container">
+          <div style="text-align:center;max-width:640px;margin:0 auto 56px">
+            <div class="reveal"><div class="eyebrow">Layanan</div></div>
+            <div class="reveal" data-delay="60">
+              <h2 class="sec-h2" style="margin-top:14px">Pilih yang paling cocok buat bisnis lo.</h2>
+            </div>
+          </div>
+
+          <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:22px" class="svc-grid">
+
+            {{-- Card 1: Company Profile --}}
+            <div class="reveal" data-delay="0">
+              <div class="svc-card">
+                <div class="svc-ico"><i data-lucide="building-2"></i></div>
+                <h3 style="font:var(--text-h3);letter-spacing:-.02em">Company Profile</h3>
+                <p style="font-size:14.5px;font-weight:700;color:var(--fg1);margin:10px 0 8px;line-height:1.45">Untuk bisnis yang mau terlihat profesional di mata klien dan mitra.</p>
+                <p style="font-size:14.5px;line-height:1.6;color:var(--fg2);margin-bottom:18px">Tampilkan siapa lo, apa yang lo tawarkan, dan kenapa mereka harus pilih lo dalam satu website yang rapi dan meyakinkan.</p>
+                <div class="svc-meta">
+                  <div class="svc-metarow">
+                    <span class="k">Cocok untuk:</span>
+                    <span class="v">Kuliner, klinik, jasa, butik, konsultan.</span>
+                  </div>
+                  <div class="svc-result">
+                    <i data-lucide="arrow-up-right"></i>
+                    Closing lebih mudah. Kredibilitas meningkat.
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {{-- Card 2: Landing Page --}}
+            <div class="reveal" data-delay="70">
+              <div class="svc-card">
+                <div class="svc-ico"><i data-lucide="target"></i></div>
+                <h3 style="font:var(--text-h3);letter-spacing:-.02em">Landing Page</h3>
+                <p style="font-size:14.5px;font-weight:700;color:var(--fg1);margin:10px 0 8px;line-height:1.45">Untuk bisnis yang lagi jalanin iklan atau campaign.</p>
+                <p style="font-size:14.5px;line-height:1.6;color:var(--fg2);margin-bottom:18px">Satu halaman yang dirancang khusus untuk satu tujuan: bikin calon pelanggan klik, isi form, atau langsung WA lo.</p>
+                <div class="svc-meta">
+                  <div class="svc-metarow">
+                    <span class="k">Cocok untuk:</span>
+                    <span class="v">Promo produk, event, diskon musiman, iklan Meta/Google.</span>
+                  </div>
+                  <div class="svc-result">
+                    <i data-lucide="arrow-up-right"></i>
+                    ROI iklan naik. Leads masuk lebih banyak.
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {{-- Card 3: Portfolio --}}
+            <div class="reveal" data-delay="140">
+              <div class="svc-card">
+                <div class="svc-ico"><i data-lucide="user-round"></i></div>
+                <h3 style="font:var(--text-h3);letter-spacing:-.02em">Portfolio &amp; Personal Branding</h3>
+                <p style="font-size:14.5px;font-weight:700;color:var(--fg1);margin:10px 0 8px;line-height:1.45">Untuk yang jual keahlian dan nama sendiri.</p>
+                <p style="font-size:14.5px;line-height:1.6;color:var(--fg2);margin-bottom:18px">Tampilkan karya, pengalaman, dan keahlian dalam satu halaman yang bikin orang langsung paham kalo lo serius di bidang ini.</p>
+                <div class="svc-meta">
+                  <div class="svc-metarow">
+                    <span class="k">Cocok untuk:</span>
+                    <span class="v">Freelancer, konsultan, kreator, fotografer, coach.</span>
+                  </div>
+                  <div class="svc-result">
+                    <i data-lucide="arrow-up-right"></i>
+                    Personal brand lebih kuat. Klien lebih gampang percaya.
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      {{-- ================================================================
+           HOW IT WORKS
+           ================================================================ --}}
+      <section id="cara" class="section" aria-label="Cara kerja - 3 langkah dari konsultasi sampai website live">
+        <div class="container">
+          <div style="text-align:center;max-width:620px;margin:0 auto 60px">
+            <div class="reveal"><div class="eyebrow">Cara kerja</div></div>
+            <div class="reveal" data-delay="60">
+              <h2 class="sec-h2" style="margin-top:14px">Prosesnya simpel. Beneran.</h2>
+            </div>
+          </div>
+
+          <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:26px" class="step-grid">
+
+            <div class="reveal" data-delay="0">
+              <div>
+                <div style="display:flex;align-items:center;gap:12px;margin-bottom:16px">
+                  <span class="step-num is-ai">01</span>
+                  <span class="step-rule"></span>
+                </div>
+                <div style="display:flex;align-items:center;gap:9px;margin-bottom:8px">
+                  <i data-lucide="message-circle" style="width:19px;height:19px;color:var(--teal)"></i>
+                  <h3 style="font:var(--text-h4)">Konsultasi</h3>
+                </div>
+                <p style="font-size:14.5px;line-height:1.6;color:var(--fg2)">Ceritain bisnis lo ke tim kami via WhatsApp atau Telepon. Gratis, tanpa pressure, nggak butuh ngerti teknis.</p>
+                <a href="https://wa.me/6281271762774?text=Halo+JadiWeb%2C+saya+mau+konsultasi+bikin+website" class="btn btn-ghost" style="margin-top:12px;padding:8px 12px;font-size:13.5px" target="_blank" rel="noopener">
+                  Mulai konsultasi →
+                </a>
+              </div>
+            </div>
+
+            <div class="reveal" data-delay="100">
+              <div>
+                <div style="display:flex;align-items:center;gap:12px;margin-bottom:16px">
+                  <span class="step-num">02</span>
+                  <span class="step-rule"></span>
+                </div>
+                <div style="display:flex;align-items:center;gap:9px;margin-bottom:8px">
+                  <i data-lucide="hammer" style="width:19px;height:19px;color:var(--fg2)"></i>
+                  <h3 style="font:var(--text-h4)">Pengerjaan</h3>
+                </div>
+                <p style="font-size:14.5px;line-height:1.6;color:var(--fg2)">Begitu deal, kami langsung kerjakan. Desain, domain, hosting, CMS & SEO - semua kami urus.</p>
+              </div>
+            </div>
+
+            <div class="reveal" data-delay="200">
+              <div>
+                <div style="display:flex;align-items:center;gap:12px;margin-bottom:16px">
+                  <span class="step-num">03</span>
+                  <span class="step-rule"></span>
+                </div>
+                <div style="display:flex;align-items:center;gap:9px;margin-bottom:8px">
+                  <i data-lucide="rocket" style="width:19px;height:19px;color:var(--fg2)"></i>
+                  <h3 style="font:var(--text-h4)">Website Lo Live</h3>
+                </div>
+                <p style="font-size:14.5px;line-height:1.6;color:var(--fg2)">Dalam 2 hari kerja, website sudah online. Review, revisi kalau perlu, selesai.</p>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      {{-- ================================================================
+           PRICING (sarcastic 3-col)
+           ================================================================ --}}
+      <section id="harga" class="section" aria-label="Harga - Rp 2.490.000 per tahun, all-inclusive" style="background:var(--mist)">
+        <div class="container">
+          <div style="text-align:center;max-width:640px;margin:0 auto 64px">
+            <div class="reveal"><div class="eyebrow">Paket &amp; Harga</div></div>
+            <div class="reveal" data-delay="60">
+              <h2 class="sec-h2" style="margin-top:14px">Satu paket. Semua sudah include.</h2>
+            </div>
+            <div class="reveal" data-delay="120">
+              <p style="font:var(--text-lead);color:var(--fg2);margin-top:14px">Nggak murahan, nggak ribet. Pas di tengah, persis yang bisnis lo butuh.</p>
+            </div>
+          </div>
+
+          <div class="reveal" data-delay="120">
+            <div class="price-grid">
+
+              {{-- Dead left --}}
+              <div class="price-col dead">
+                <div class="price-tag-dead">Yang Murahan</div>
+                <div class="price-quote">"Mulai 500 ribu!"</div>
+                <div style="display:flex;flex-direction:column;margin-top:auto">
+                  @each(f in ['Desain template, tinggal ganti teks', 'Revisi terbatas, lebih bayar lagi', 'Nggak ada SEO', 'Selesai kapan? Nunggu antrian', 'Kalau ada masalah susah dihubungi'])
+                    <div class="price-feat struck">
+                      <i data-lucide="x" style="width:16px;height:16px;color:var(--fg4)"></i>
+                      <span class="ft">{{ f }}</span>
+                    </div>
+                  @end
+                </div>
+                <div style="margin-top:22px">
+                  <button class="btn" disabled style="width:100%;background:var(--cloud);color:var(--fg4);cursor:not-allowed">Bukan ini</button>
+                </div>
+              </div>
+
+              {{-- Live center --}}
+              <div class="price-col live">
+                <div class="price-pattern"></div>
+                <div style="position:relative">
+                  <span class="chip chip-solid">
+                    <i data-lucide="sparkles"></i>
+                    JadiWeb · Recommended
+                  </span>
+                  <div style="margin-top:18px;display:flex;align-items:baseline;gap:8px;flex-wrap:wrap">
+                    <span style="font-family:var(--font-display);font-weight:800;font-size:42px;letter-spacing:-.03em;color:#fff">Rp 2.490.000</span>
+                    <span style="font-size:15px;font-weight:600;color:var(--teal-300)">/tahun</span>
+                  </div>
+                  <p style="font-size:13.5px;color:rgba(234,240,238,.65);margin-top:6px">Kurang dari Rp 210.000/bulan. Tanpa biaya tersembunyi.</p>
+                  <div style="height:1px;background:rgba(255,255,255,.12);margin:22px 0 6px"></div>
+                  @each(f in ['Domain (.com atau .id)', 'Hosting 1 tahun', 'CMS - Bisa update konten sendiri', 'Full custom design', 'Optimasi SEO', 'Jadi dalam 2 hari kerja'])
+                    <div class="price-live-feat">
+                      <i data-lucide="check"></i>
+                      {{ f }}
+                    </div>
+                  @end
+                  <div style="margin-top:24px">
+                    <a href="https://wa.me/6281271762774?text=Halo+JadiWeb%2C+saya+mau+jadiin+website+bisnis+saya" class="btn btn-primary btn-lg btn-block" target="_blank" rel="noopener">
+                      Oke, Jadiin
+                      <i data-lucide="arrow-right"></i>
+                    </a>
+                  </div>
+                </div>
+              </div>
+
+              {{-- Dead right --}}
+              <div class="price-col dead">
+                <div class="price-tag-dead">Yang Over-Engineered</div>
+                <div class="price-quote">"Kami butuh discovery session dulu."</div>
+                <div style="display:flex;flex-direction:column;margin-top:auto">
+                  @each(f in ['Brief 20 halaman sebelum mulai', 'Timeline berbulan-bulan', 'Revisi masuk scope tersendiri', 'Harga? Tunggu proposal', 'Hasilnya keren, tapi lo nggak butuh separuhnya'])
+                    <div class="price-feat struck">
+                      <i data-lucide="x" style="width:16px;height:16px;color:var(--fg4)"></i>
+                      <span class="ft">{{ f }}</span>
+                    </div>
+                  @end
+                </div>
+                <div style="margin-top:22px">
+                  <button class="btn" disabled style="width:100%;background:var(--cloud);color:var(--fg4);cursor:not-allowed">Bukan ini</button>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {{-- ================================================================
+           FAQ
+           ================================================================ --}}
+      <section id="faq" class="section" aria-label="FAQ - Pertanyaan umum tentang JadiWeb">
+        <div class="container" style="max-width:800px">
+          <div style="text-align:center;margin-bottom:48px">
+            <div class="reveal"><div class="eyebrow">FAQ</div></div>
+            <div class="reveal" data-delay="60">
+              <h2 class="sec-h2" style="margin-top:14px">Masih ada yang bikin ragu?</h2>
+            </div>
+          </div>
+
+          @let(faqs = [
+            { q: '"Bisnis saya masih kecil, belum butuh website."', a: 'Justru sekarang waktu yang tepat. Bangun kredibilitas sebelum bisnis lo besar, biar dari awal sudah kelihatan serius dan profesional.' },
+            { q: '"Mahal nggak?"', a: 'Rp 2.490.000 per tahun, sudah termasuk semuanya. Kurang dari Rp 210.000 per bulan dan nggak ada biaya tersembunyi.' },
+            { q: '"Prosesnya lama nggak?"', a: '2 hari kerja. Bukan minggu, bukan bulan. Lo isi brief, kami langsung kerjakan.' },
+            { q: '"Saya nggak ngerti soal website sama sekali."', a: 'Nggak perlu ngerti. Kami urus semuanya dari awal sampai live. Cukup kasih info bisnis lo, sisanya urusan kami.' }
+          ])
+
+          @each((faq, i) in faqs)
+            <div class="reveal faq-item" data-delay="{{ i * 50 }}">
+              <div class="faq-q" @click="toggleFaq({{ i }})">
+                <span>
+                  <span class="qmark">{{ i < 9 ? '0' + (i + 1) : (i + 1) }}</span>{{ faq.q }}
+                </span>
+                <span class="faq-icon" x-text="faqOpen === {{ i }} ? '−' : '+'"></span>
+              </div>
+              <p class="faq-a" x-show="faqOpen === {{ i }}" x-transition.duration.300ms>{{ faq.a }}</p>
+            </div>
+          @end
+
+        </div>
+      </section>
+
+      {{-- ================================================================
+           FINAL CTA (teal band)
+           ================================================================ --}}
+      <section class="section cta-band" aria-label="Call to action - Mulai buat website bisnis lo sekarang">
+        <div class="hero-pattern"></div>
+        <div class="container" style="text-align:center;max-width:720px;position:relative">
+          <div class="reveal">
+            <h2 class="sec-h2" style="color:#fff;font-size:clamp(34px,5vw,56px)">Siap jadi bisnis yang serius?</h2>
+          </div>
+          <div class="reveal" data-delay="70">
+            <p style="font-size:20px;color:rgba(255,255,255,.9);margin-top:18px">Satu langkah kecil, website lo live dalam 2 hari.</p>
+          </div>
+          <div class="reveal" data-delay="140">
+            <div style="margin-top:32px;display:flex;justify-content:center;gap:14px;flex-wrap:wrap">
+              <a href="https://wa.me/6281271762774?text=Halo+JadiWeb%2C+saya+mau+jadiin+website+bisnis+saya" class="btn btn-white btn-lg" target="_blank" rel="noopener">
+                Jadiin Sekarang
+                <i data-lucide="arrow-right" style="color:var(--teal-800)"></i>
+              </a>
+            </div>
+          </div>
+          <div class="reveal" data-delay="200">
+            <div style="margin-top:22px;font-size:13.5px;color:rgba(255,255,255,.8);display:inline-flex;align-items:flex-start;gap:8px;max-width:360px;text-align:left">
+              <i data-lucide="shield-check" style="width:16px;height:16px;color:#fff;flex-shrink:0;margin-top:1px"></i>
+              Konsultasi gratis dulu. Tanpa pressure, tanpa biaya tersembunyi.
+            </div>
+          </div>
+        </div>
+      </section>
+
+    </main>
+
+    {{-- ================================================================
+         FOOTER
+         ================================================================ --}}
+    <footer class="site-footer">
+      <div class="container" style="padding:68px 28px 34px">
+        <div style="display:grid;grid-template-columns:1.7fr 1fr 1fr 1fr;gap:32px" class="foot-grid">
+
+          <div>
+            <a href="/" style="display:inline-flex;align-items:center;gap:9px;text-decoration:none">
+              <svg width="41" height="30" viewBox="0 0 575 423" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M328.191 207.579L337.016 221.993C339.271 225.676 344.289 226.459 347.559 223.639L405.866 173.363C409.796 169.974 408.803 163.638 404.026 161.614L339.709 134.361C328.604 129.656 328.246 114.049 339.123 108.839L564.876 0.711435C570.691 -2.07373 576.861 3.81625 574.348 9.75416L405.727 408.276C402.317 416.338 391.12 416.934 386.873 409.28L304.561 260.964L328.191 207.579Z" fill="#EEEEEE"/>
+                <path d="M99.2188 119.264C95.084 111.395 101.985 102.269 110.683 104.103L277.668 139.319C284.275 140.713 290.015 144.771 293.531 150.536L330.325 210.855C333.834 216.608 333.73 223.864 330.056 229.513L252.969 348.055C243.114 363.211 227.778 373.967 210.172 378.072L18.0294 422.872C18.0294 422.872 74.6795 397.898 110.272 381.301C140.756 367.087 164.533 356.796 178.536 348.044C192.539 339.293 202.603 314.636 170.659 324.415C138.715 334.193 123.509 339.549 98.8949 349.795C59.3092 366.272 0 397.492 0 397.492C0 397.492 31.5063 375.475 93.2062 332.729C129.583 307.527 151.357 287.705 163.103 275.68C170.53 268.076 171.472 256.766 166.527 247.357L99.2188 119.264Z" fill="#1F6F5F"/>
+              </svg>
+              <span style="font-family:var(--font-display);font-weight:800;font-size:18px;letter-spacing:-.02em;color:#fff">JadiWeb</span>
+            </a>
+            <p style="margin-top:18px;font-size:14.5px;line-height:1.6;color:var(--fg-on-ink);opacity:.72;max-width:280px">
+              Website custom buat bisnis Indonesia. Online dalam 1-2 hari, harga flat, terima beres.
+            </p>
+          </div>
+
+          <div>
+            <div style="font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--teal-300);margin-bottom:16px">Layanan</div>
+            <ul style="list-style:none;display:flex;flex-direction:column;gap:11px">
+              @each(l in ['Company Profile', 'Landing Page', 'Portfolio'])
+                <li><a href="#layanan" style="font-size:14px;color:var(--fg-on-ink);opacity:.8">{{ l }}</a></li>
+              @end
+            </ul>
+          </div>
+
+          <div>
+            <div style="font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--teal-300);margin-bottom:16px">Perusahaan</div>
+            <ul style="list-style:none;display:flex;flex-direction:column;gap:11px">
+              <li><a href="#cara" style="font-size:14px;color:var(--fg-on-ink);opacity:.8">Cara kerja</a></li>
+              <li><a href="#harga" style="font-size:14px;color:var(--fg-on-ink);opacity:.8">Harga</a></li>
+              <li><a href="#faq" style="font-size:14px;color:var(--fg-on-ink);opacity:.8">FAQ</a></li>
+            </ul>
+          </div>
+
+          <div>
+            <div style="font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--teal-300);margin-bottom:16px">Kontak</div>
+            <ul style="list-style:none;display:flex;flex-direction:column;gap:11px">
+              <li><a href="https://wa.me/6281271762774" target="_blank" rel="noopener" style="font-size:14px;color:var(--fg-on-ink);opacity:.8">WhatsApp</a></li>
+              <li><a href="https://www.instagram.com/jadiwebid/" target="_blank" rel="noopener" style="font-size:14px;color:var(--fg-on-ink);opacity:.8">Instagram</a></li>
+              <li><a href="mailto:halo@jadiweb.id" style="font-size:14px;color:var(--fg-on-ink);opacity:.8">halo@jadiweb.id</a></li>
+            </ul>
           </div>
 
         </div>
-      </main>
+        <div style="border-top:1px solid rgba(255,255,255,.1);margin-top:48px;padding-top:24px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px">
+          <span style="font-size:13px;color:var(--fg-on-ink);opacity:.6">© 2026 JadiWeb. Dibuat di Indonesia.</span>
+          <span style="font-size:13px;color:var(--fg-on-ink);opacity:.6">Harga flat, titik. Tanpa biaya tersembunyi.</span>
+        </div>
+      </div>
+    </footer>
 
-      {{-- Version footer --}}
-      <footer class="relative z-10 flex items-center justify-center px-8 py-6">
-        <p class="text-xs text-slate-700 tracking-widest uppercase">
-          Bun &nbsp;·&nbsp; Elysia v1 &nbsp;·&nbsp; SurrealDB &nbsp;·&nbsp; EdgeJS
-        </p>
-      </footer>
 
-    </div>
+  </div>
   @end
 @end
