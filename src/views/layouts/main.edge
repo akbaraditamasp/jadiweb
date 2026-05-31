@@ -7,7 +7,7 @@
   <meta name="theme-color" content="#1F6F5F" />
   <meta name="format-detection" content="telephone=no" />
 
-  <title>{{{ await $slots.title?.() ?? 'JadiWeb' }}}</title>
+  <title>{{{ (await $slots.title?.() ?? 'JadiWeb').trim() }}}</title>
 
   {{-- Page-specific head (meta description, OG, JSON-LD, canonical, etc.) --}}
   {{{ await $slots.head?.() ?? '' }}}
